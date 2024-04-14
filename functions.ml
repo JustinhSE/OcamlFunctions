@@ -20,8 +20,7 @@ let rec helper lst tail = match tail with
 | [] -> lst
 | h::t -> if (size t) >= 2 then helper (lst @ [[head;h]] @ [[head] @ t] ) t
 else helper (lst @ [[head;h]]) t in helper [] tail;;
-(* ^^ Helper Function ^^) 
-
+(* ^^ Helper Function ^^ *) 
 
 let power_sets lst = if size lst = 2 then [lst;[(List.hd lst)];(List.tl lst);[]] else if size lst = 1 then [lst] else 
 let rec aux result lst = match lst with
