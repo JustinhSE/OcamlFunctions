@@ -29,3 +29,11 @@ let rec aux result lst = match lst with
 if (size t) > 2 then aux (result @ [[h]] @ [t] @ (allCombos h t)) t 
 else aux (result @ [[h]] @ (allCombos h t)) t in aux [lst] lst;;
 
+
+(* Inputting a polynomial function (non-increasing order) & returns a function*)
+
+let poly lst num =
+let rec helper num lst= match lst with
+| [] -> 0
+| (i, n)::t -> (int_of_float(float_of_int i) * int_of_float(float_of_int num ** float_of_int n)) + helper num t 
+in helper num lst;;
